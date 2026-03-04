@@ -1,0 +1,192 @@
+body {
+    background-color: #FFFDF0; /* Сүт түстес (молочный) фон */
+    color: #5D4037;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 253, 240, 0.4); /* Суретті жұмсарту */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #B7950B;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Контент */
+.guest-title {
+    color: #8D6E63;
+    font-size: 1.8rem;
+}
+
+.description-text h3 {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.event-details-card {
+    background: #FFF9C4; /* Ашық сары */
+    border: 2px solid #FBC02D;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.divider {
+    height: 2px;
+    background: #FBC02D;
+    width: 60%;
+    margin: 10px auto;
+}
+
+/* Таймер */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.time-unit span {
+    font-size: 2.5rem;
+    color: #D4AC0D;
+    font-weight: bold;
+    display: block;
+}
+
+.wish-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    padding: 0 15px;
+}
+
+.signature {
+    color: #B7950B;
+}
+
+/* RSVP */
+.rsvp-section {
+    background: #FFFFFF;
+    border-radius: 15px;
+    border: 2px dashed #FBC02D;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.btn-confirm {
+    background-color: #FBC02D;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 40px;
+    border: none;
+}
+
+.btn-confirm:hover { background-color: #F9A825; color: white; }
+
+.btn-download {
+    background-color: #5D4037;
+    color: white;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .hero-text h1 { font-size: 2.5rem; }
+    .time-unit span { font-size: 1.8rem; }
+}
+/* Бүйірдегі суреттерге арналған стиль */
+.fixed-decor {
+    position: fixed; /* Экранда қозғалмай тұру үшін */
+    top: 50%; /* Экранның ортасына қою */
+    transform: translateY(-50%); /* Нақты ортаға келтіру */
+    width: 150px; /* Суреттің ені (қажетінше өзгертіңіз) */
+    z-index: 1000; /* Басқа элементтердің үстінде тұруы үшін */
+    pointer-events: none; /* Сурет батырмаларды басуға кедергі жасамас үшін */
+    opacity: 0.8; /* Аздап мөлдірлік (қалауыңызша) */
+}
+
+.decor-left {
+    left: 0; /* Сол жақ шетке жабыстыру */
+}
+
+.decor-right {
+    right: 0; /* Оң жақ шетке жабыстыру */
+}
+
+/* Мобильді телефондарда суреттер мәтінді жауып тастамауы үшін */
+@media (max-width: 768px) {
+    .fixed-decor {
+        width: 80px; /* Телефонда суретті кішірейту */
+        opacity: 0.5; /* Телефонда көмескілеу қылу */
+    }
+}
+/* Музыка батырмасының стилі */
+.music-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #B7950B; /* Алтын-сары түс */
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.music-button:active {
+    transform: scale(0.9);
+}
+
+/* Ойнап жатқанда айналу эффектісі (қалауыңызша) */
+.music-button.playing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(183, 149, 11, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(183, 149, 11, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(183, 149, 11, 0); }
+}
